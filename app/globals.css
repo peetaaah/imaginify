@@ -75,7 +75,8 @@
   }
 }
 
-.auth {
+/* this is for the Clerk SignIn provider */
+.auth { 
   @apply flex-center min-h-screen w-full bg-purple-100
 }
 

@@ -9,4 +9,4 @@ const TransformationsPage = ({ params }: { params: { id: String } }) => {
 export default TransformationsPage
 
 // not on localhost:3000/transformations
-// --> each will have its own id, using dynamic routes. use [] instead of ()
+// --> each will have its own id, using dynamic routes. use [] instead of ()<
