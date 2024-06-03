@@ -4,7 +4,7 @@ import { Document, Schema, model, models } from "mongoose"
 
 // extend document to add fiels like _id
 // export interface IImage extends Document {
-//     clerkId: string;
+    // clerkId: string;
 //     email: string;
 //     username: string;
 //     photo: ImageBitmap,
