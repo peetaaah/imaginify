@@ -19,6 +19,7 @@ const AddTransformationTypePage = async ({ params: { type } }: SearchParamProps)
 
   const user = await getUserById(userId)
   // console.log(transformation)
+  console.log('what is type? ', transformation)
 
   return (
     <>
@@ -26,12 +27,15 @@ const AddTransformationTypePage = async ({ params: { type } }: SearchParamProps)
         title={transformation.title}
         subTitle={transformation.subTitle}
       />
+      <section className='mt-10'>
       <TransformationForm
         action='Add'
         userId={user._id}
         type={transformation.type as TransformationTypeKey}
         creditBalance={user.creditBalance}
       />
+
+      </section>
     </>
   )
 }
