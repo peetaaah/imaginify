@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 
 import { CustomField } from './CustomField'
+import TransformedImage from './TransformedImage'
+
 
 import {
   Form,
@@ -114,8 +116,9 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
 
     setNewTransformation(null)
     startTransition(async () => {
-      // TODO: Return to updateCredits function
       // await updateCredits(userId, creditFee)
+      // TODO: update creditFee to be dynamic
+      await updateCredits(userId, -1)
       console.log('henlo')
 
     })
@@ -220,6 +223,14 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                 type={type}
               />
             )}
+          />
+          <TransformedImage
+            image={image}
+            type={type}
+            title={form.getValues().title}
+            isTransforming={isTransforming}
+            setIsTransforming={setIsTransforming}
+            transformationConfig={transformationConfig}
           />
         </div>
         <div className="flex flex-col gap-4">
