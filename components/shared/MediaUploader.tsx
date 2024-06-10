@@ -6,13 +6,21 @@ import Image from 'next/image'
 import { getImageSize, dataUrl } from '@/lib/utils'
 import { PlaceholderValue } from 'next/dist/shared/lib/get-img-props'
 
+// type MediaUploaderProps = {
+//     onValueChange: (value: string) => void,
+//     setImage: React.Dispatch<any>, // this is how you define type for setStates
+//     publicId: string,
+//     image: any,
+//     type: string
+// }
+
 type MediaUploaderProps = {
-    onValueChange: (value: any) => void,
-    setImage: React.Dispatch<any>, // this is how you define type for setStates
-    publicId: string,
-    image: any,
-    type: string
-}
+    onValueChange: (value: string) => void;
+    setImage: React.Dispatch<React.SetStateAction<any>>;
+    publicId: string;
+    image: any;
+    type: string;
+};
 
 const MediaUploader = ({
     onValueChange,
@@ -20,7 +28,7 @@ const MediaUploader = ({
     image,
     publicId,
     type
-}) => {
+}: MediaUploaderProps) => {
 
     const { toast } = useToast()
     const onUploadSuccessHandler = (result: any) => {
