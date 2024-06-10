@@ -7,7 +7,7 @@ import { getImageSize, dataUrl } from '@/lib/utils'
 import { PlaceholderValue } from 'next/dist/shared/lib/get-img-props'
 
 type MediaUploaderProps = {
-    onValueChange: (value: string) => void,
+    onValueChange: (value: any) => void,
     setImage: React.Dispatch<any>, // this is how you define type for setStates
     publicId: string,
     image: any,
