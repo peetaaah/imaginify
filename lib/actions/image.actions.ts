@@ -166,8 +166,8 @@ export async function getUserImages({
     const skipAmount = (Number(page) - 1) * limit;
 
     const images = await populateUser(Image.find({ author: userId }))
-      .sort({ updatedAt: -1 })
-      .skip(skipAmount)
+      .sort({ updatedAt: -1 }) // newer ones appear on top
+      .skip(skipAmount) // skipping for pagination
       .limit(limit);
 
     const totalImages = await Image.find({ author: userId }).countDocuments();

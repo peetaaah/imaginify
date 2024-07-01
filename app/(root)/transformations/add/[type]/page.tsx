@@ -19,7 +19,7 @@ const AddTransformationTypePage = async ({ params: { type } }: SearchParamProps)
 
   const user = await getUserById(userId)
   // console.log(transformation)
-  console.log('what is type? ', transformation)
+  // console.log('what is type? ', transformation)
 
   return (
     <>

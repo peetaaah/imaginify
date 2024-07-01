@@ -45,7 +45,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
       </section>
 
-      <UserButton afterSignOutUrl='/' />
+      {/* <UserButton afterSignOutUrl='/' /> */}
     </>
   )
 }
