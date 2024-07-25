@@ -158,8 +158,8 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             value
         }
       }))
-      return onChangeField(value)
-    }, 1000)
+    }, 1000)()
+    return onChangeField(value)
   }
 
   const onSelectFieldHandler = (
@@ -219,7 +219,9 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
               <Select
                 onValueChange={(value) => {
                   onSelectFieldHandler(value, field.onChange)
-                }}>
+                }}
+                value={field.value}
+              >
                 <SelectTrigger className="select-field">
                   <SelectValue placeholder="Select Size" />
                 </SelectTrigger>
@@ -247,7 +249,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                   'Object to color'
               }
               className='w-full'
-              render={(({ field }) => (
+              render={({ field }) => (
                 <Input
                   value={field.value}
                   className="input-field"
@@ -258,7 +260,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                     field.onChange
                   )}
                 />
-              ))}
+              )}
             />
 
             {type === 'recolor' && (

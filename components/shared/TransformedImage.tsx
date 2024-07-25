@@ -9,7 +9,7 @@ import React from 'react'
 const TransformedImage = ({ image, type, title, transformationConfig, isTransforming, setIsTransforming, hasDownload = false }: TransformedImageProps) => {
   const downloadHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-
+    
     download(getCldImageUrl({
       width: image?.width,
       height: image?.height,
@@ -17,6 +17,7 @@ const TransformedImage = ({ image, type, title, transformationConfig, isTransfor
       ...transformationConfig
     }), title)
   }
+
 
   return (
     <div className="flex flex-col gap-4">
