@@ -8,6 +8,7 @@ import { Collection } from '@/components/shared/Collection'
 import { getAllImages } from '@/lib/actions/image.actions'
 const Home = async ({ searchParams }: SearchParamProps) => {
 
+  console.log(searchParams, 'searchParams in home page')
   const page = Number(searchParams?.page || 1)
   const searchQuery = (searchParams?.query as string) || ''
 

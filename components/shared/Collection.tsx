@@ -42,6 +42,7 @@ export const Collection = ({
       key: "page",
       value: pageValue,
     });
+    console.log(newUrl)
 
     router.push(newUrl, { scroll: false });
   };
